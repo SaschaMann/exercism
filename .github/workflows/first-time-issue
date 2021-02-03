@@ -1,4 +1,4 @@
-name: Stop Hacktoberfest Spam
+name: First Time Issues
 
 on:
   issues:
