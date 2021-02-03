@@ -25,17 +25,7 @@ jobs:
             })
             const issues = await github.paginate(opts)
 
-            for (const issue of issues) {
-              if (issue.number === context.issue.number) {
-                continue
-              }
-
-              if (issue.pull_request) {
-                return false // Creator is already a contributor.
-              }
-            }
-            
-            return true
+            return issues.length > 1
       
       - name: Post friendly comment
         if: steps.new-contributor.outputs.result == 'true'
