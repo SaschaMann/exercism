@@ -25,7 +25,7 @@ jobs:
             })
             const issues = await github.paginate(opts)
 
-            return issues.length > 1
+            return issues.length === 1
       
       - name: Post friendly comment
         if: steps.new-contributor.outputs.result == 'true'
